@@ -1,0 +1,33 @@
+.header{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 10px;
+}
+
+.cards{
+  
+}
+.container{
+    width: 80%;
+   display:flex;
+   justify-content: center;
+}
+.profile img{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px 10px;
+    border: solid #3498db 2px;
+}
+.account h2{
+    color: white;
+    margin: 12px 0px;
+}
+.account{
+    margin: 0 40px;
+}
+.mb-3{
+    margin-right: 0;
+}

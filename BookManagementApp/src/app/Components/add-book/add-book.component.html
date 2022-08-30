@@ -1,0 +1,47 @@
+<div class="header" style="display: flex; align-items: center;margin: 0 20px;">
+    <button class="btn btn-sm btn-success" style="margin: 10px 0 0 0;" routerLink="/dashboard"><- Back</button>
+    <h2 style="padding: 5px; margin: 10px 0 0 20px;">Add Book</h2>
+
+</div>
+<hr>
+
+<div class="container" style="width:60%;">
+    
+    <form class="example-form" [formGroup] ="bookForm" (ngSubmit)="addBook()">
+        <div class="row">
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="legacy">
+                  <mat-label>Name</mat-label>
+                  <input formControlName="name" type="text" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-4" >
+                <mat-form-field class="example-full-width" appearance="legacy">
+                    <mat-label>Description</mat-label>
+                    <textarea formControlName="description" matInput></textarea>
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="legacy">
+                  <mat-label>Author</mat-label>
+                  <input formControlName="author" type="text" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="legacy">
+                  <mat-label>Price</mat-label>
+                  <input formControlName="price" type="number" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="example-full-width" appearance="legacy">
+                    <mat-label>Cover Page URL</mat-label>
+                    <input formControlName="imageUrl" type="text" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-4" style="display:flex; justify-content: flex-end;">
+                  <button type="submit" class="btn btn-sm btn-primary" >Save</button>
+            </div>
+        </div>
+    </form>
+</div>
