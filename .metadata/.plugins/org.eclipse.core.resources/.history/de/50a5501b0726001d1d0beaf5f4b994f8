@@ -1,0 +1,50 @@
+package com.team3.bookmanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.team3.bookmanagement.dto.BookDTO;
+import com.team3.bookmanagement.service.BookService;
+
+
+@RestController
+@RequestMapping("api/v1/book")
+public class BookController {
+	
+	@Autowired
+	private BookService bookService;
+	
+	@PostMapping("/add_book")
+	public String createBook(@RequestBody BookDTO dto) {
+		return bookService.createBook(dto);
+	}
+	
+	@GetMapping("/search_book/{name}")
+	public String getBook(@PathVariable String name) {
+		return "get";
+	}
+	
+	@GetMapping("/show_books")
+	public String getAllBooks() {
+		return "getAll";
+	}
+	
+	@PutMapping("/update_book/{id}")
+	public String updateBook(@PathVariable Long id) {
+		return "Update";
+	}
+	
+	@DeleteMapping("/delete_book/{id}")
+	public String deleteBook(@PathVariable Long id) {
+		return "delete";
+	}
+
+	
+}

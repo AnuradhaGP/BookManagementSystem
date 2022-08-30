@@ -1,0 +1,9 @@
+package com.team3.bookmanagement.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.team3.bookmanagement.entity.Book;
+
+public interface BookRepo extends JpaRepository<Book, Long>{
+
+}

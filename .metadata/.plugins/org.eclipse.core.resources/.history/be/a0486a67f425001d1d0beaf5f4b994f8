@@ -1,0 +1,11 @@
+package com.team3.bookmanagement.service;
+
+import com.team3.bookmanagement.dto.BookDTO;
+
+public interface BookService {
+	public String creatBook(BookDTO dto);
+	public String getBook();
+	public String getAllBook();
+	public String updateBook();
+	public String deleteBook();
+}

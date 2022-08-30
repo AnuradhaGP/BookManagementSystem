@@ -1,0 +1,14 @@
+package com.team3.bookmanagement.service;
+
+import java.util.List;
+
+import com.team3.bookmanagement.dto.BookDTO;
+import com.team3.bookmanagement.entity.Book;
+
+public interface BookService {
+	public Book createBook(BookDTO dto);
+	public BookDTO getBook();
+	public List<Book> getAllBook();
+	public Book updateBook();
+	public Book deleteBook();
+}
