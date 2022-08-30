@@ -1,7 +1,0 @@
-package com.team3.bookmanagement.service.impl;
-
-import com.team3.bookmanagement.service.UserService;
-
-public class UserServiceImp implements UserService {
-
-}
