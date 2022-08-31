@@ -40,7 +40,7 @@
                 </mat-form-field>
             </div>
             <div class="col-4" style="display:flex; justify-content: flex-end;">
-                  <button type="submit" class="btn btn-sm btn-primary" >Save</button>
+                  <button type="submit" class="btn btn-sm btn-primary" [disabled]="bookForm.invalid">Save</button>
             </div>
         </div>
     </form>
