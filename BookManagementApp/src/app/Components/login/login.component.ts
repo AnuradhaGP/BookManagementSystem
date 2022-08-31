@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.get('password')?.value
     ).subscribe(res=>{
       this.userService.setCurrentUser(res.data);
+      this.userService.logControl();
       this.router.navigate(['dashboard']);
     }, err=>{
         this.errorState=true;

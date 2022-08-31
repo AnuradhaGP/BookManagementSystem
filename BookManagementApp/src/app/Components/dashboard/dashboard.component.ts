@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
 
   logout(){
     this.userService.setCurrentUser(<User>{});
+    this.userService.logControl();
     this.router.navigate(['/login']);
   }
   

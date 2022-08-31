@@ -13,6 +13,16 @@ export class UserService {
 
   public currentUser=<User>{};
 
+  loggedIn=false;
+
+  logControl(){
+    this.loggedIn=!this.loggedIn;
+  }
+
+  isLogged():boolean{
+    return this.loggedIn;
+  }
+
   setCurrentUser(user:User){
     this.currentUser=user;
   }

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { BookDetailsComponent } from './Components/book-details/book-details.component';
 import { UpdateBookComponent } from './Components/update-book/update-book.component';
+import { AuthGuard } from './Gurd/auth.guard';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { UpdateBookComponent } from './Components/update-book/update-book.compon
     HttpClientModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
