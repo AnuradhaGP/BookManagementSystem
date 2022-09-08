@@ -11,6 +11,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class SignupComponent implements OnInit {
 
+  //sign up form group
   signupForm:FormGroup = new FormGroup({
     username: new FormControl(null,[Validators.required]),
     password: new FormControl(null,[Validators.required]),
@@ -23,22 +24,32 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  errorState = false;
+  errorState=false;
+
+  //sign up function
   signUp(){
-    const user:User=new User(
-      0,
-      this.signupForm.get('username')?.value,
-      this.signupForm.get('password')?.value,
-      this.signupForm.get('email')?.value,
-      this.signupForm.get('avatarUrl')?.value
-    );
-   
-    this.userService.registerUser(user).subscribe(res=>{
-        alert(res.data);
+      const user:User=new User(
+        0,
+        this.signupForm.get('username')?.value,
+        this.signupForm.get('password')?.value,
+        this.signupForm.get('email')?.value,
+        this.signupForm.get('avatarUrl')?.value
+      );
+
+      this.userService.registerUser(user).subscribe(resp=>{
+        alert(resp.data);
         this._router.navigate(['login']);
-   },err=>{
-      console.log(err);
-   });
+      },erro=>{
+        console.log("errorr");
+        this.errorState = true;
+      });
+         
+        
+      
+     
+     
+  
+    
   }
 
 }

@@ -12,35 +12,38 @@
 
             <form class="example-form" [formGroup]="signupForm" (ngSubmit)="signUp()">
                 <div class="row">
-                   
+                   <!-- username -->
                     <div class="col-4">
                         <mat-form-field class="example-full-width" appearance="legacy">
                           <mat-label>User Name</mat-label>
                           <input formControlName="username" type="text" matInput>
                         </mat-form-field>
+                        <p *ngIf="errorState" style="color: red; font-size: 12px;">
+                          *This username is already in use.
+                        </p>
                     </div>
-
+                    <!-- password -->
                     <div class="col-4">
                         <mat-form-field class="example-full-width" appearance="legacy">
                           <mat-label>Password</mat-label>
                           <input formControlName="password" type="password" matInput>
                         </mat-form-field>
                     </div>
-
+                    <!-- email -->
                     <div class="col-4">
                         <mat-form-field class="example-full-width" appearance="legacy">
                           <mat-label>E-mail</mat-label>
                           <input formControlName="email" type="text" matInput>
                         </mat-form-field>
                     </div>
-
+                    <!-- profile picture -->
                     <div class="col-4">
                         <mat-form-field class="example-full-width" appearance="legacy">
                             <mat-label>Profile Picture Url</mat-label>
                             <input formControlName="avatarUrl" type="text" matInput>
                         </mat-form-field>
                     </div>
-
+                    <!-- submit button - this stays disable if form validation fails -->
                     <div class="col-4" style="display:flex; justify-content: flex-end;">
                           <button type="submit" [disabled]="signupForm.invalid" class="btn btn-sm btn-primary">Sign up</button>
                     </div>

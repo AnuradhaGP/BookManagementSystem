@@ -14,11 +14,12 @@ export class BookService {
 
   constructor(private http:HttpClient) { }
 
+  //get all books from database
   getallbooks():Observable<any>{
     return this.http.get(this.baseUrl+"/show_books");
   }
 
-
+  //add new book
   addBook(book:Book):Observable<any>{
     return this.http.post(this.baseUrl+"/add_book",{
             name:book.name,
@@ -30,18 +31,22 @@ export class BookService {
 
   }
 
+  //delete a book
   deleteItem(id:number):Observable<any>{
     return this.http.delete(this.baseUrl+"/delete_book?id="+id);
   }
 
+  //search a book by name
   searchBook(name:string):Observable<any>{
     return this.http.get(this.baseUrl+"/search_book/"+name);
   }
 
+  //retrieve a book from database by id
   getBook(id:number):Observable<any>{
     return this.http.get(this.baseUrl+"/get_book/"+id);
   }
 
+  //update database
   updateBook(book:Book):Observable<any>{
     return this.http.put(this.baseUrl+"/update_book",{
             id:book.id,

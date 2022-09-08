@@ -12,11 +12,12 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(private bookService:BookService) { }
 
+  // search bar form group
   searchBar:FormGroup = new FormGroup({
     search:new FormControl(null)
   });
 
- 
+//  book-list 
   bookList:Book[]=[];
 
   
@@ -29,6 +30,7 @@ export class BookDetailsComponent implements OnInit {
     });
   }
 
+  // delete books on delete
   deleteItem(id:number){
     if(confirm("Are You sure about deleting this item?")){
       this.bookService.deleteItem(id).subscribe(res=>{
@@ -40,7 +42,7 @@ export class BookDetailsComponent implements OnInit {
     }
   }
 
-
+  // search book by name
   search(){
     if(this.searchBar.get('search')?.value === ''){
       this.ngOnInit();

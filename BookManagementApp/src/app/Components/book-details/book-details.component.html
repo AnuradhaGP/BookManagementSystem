@@ -10,29 +10,43 @@
     </div>
 </div>
 <hr>
+
+<!-- book details body -->
 <div class="container" >
+  <!-- card -->
     <div class="cards">
       <div class="card mb-3" id="{{b.id}}" *ngFor="let b of bookList">
+
         <div class="row g-1=0">
+          <!-- Book Cover -->
           <div class="col-md-3">
-            <img src="{{b.imageUrl}}"  class="img-fluid rounded-start" id="book-cover{{b.id}}">
-           
+            <img src="{{b.imageUrl}}"  class="img-fluid rounded-start" id="book-cover{{b.id}}"> 
           </div>
+
           <div class="col-md-8">
+
             <div class="card-body">
               <h2 class="card-title" id="book-name{{b.id}}">{{b.name}}</h2>
               <p class="card-text description" id="book-description{{b.id}}">{{b.description}}</p>
               <p class="card-text" id="book-author{{b.id}}"><small class="text-muted">by {{b.author}}</small></p>
             </div>
+
             <div class="col-md-8" style="width: 100%;">
+
                 <div class="card-body">
+                    <!-- price  -->
                     <p id="book-price{{b.id}}" style="color:#3498db; font-weight: bold; font-size: 20px;">${{b.price}}</p>
+                  
+                    <!-- button group -->
                     <div style="display: flex; justify-content: flex-end; width:100%;">
                       <button class="btn btn-sm btn-danger" style="margin:0px 20px 0 0px" (click)="deleteItem(b.id)" >Delete</button>
                       <button class="btn btn-sm btn-primary" [routerLink]="['/dashboard/updatebook',b.id]">Update</button>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
     </div>
       </div>

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.team3.bookmanagement.entity.User;
 
 public interface UserRepo extends JpaRepository<User, Long>{
-	User findByUsername(String username);
+	User findByUsernameIgnoreCase(String username);
 }

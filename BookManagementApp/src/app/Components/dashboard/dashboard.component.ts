@@ -15,12 +15,14 @@ export class DashboardComponent implements OnInit {
 
   constructor(private userService:UserService,private router:Router) { }
 
+  //keep logged in user object
   currentUser:User=<User>{};
 
   ngOnInit(): void {
     this.currentUser = this.userService.getCurrentUser();
   }
 
+  //logout function
   logout(){
     this.userService.setCurrentUser(<User>{});
     this.userService.logControl();

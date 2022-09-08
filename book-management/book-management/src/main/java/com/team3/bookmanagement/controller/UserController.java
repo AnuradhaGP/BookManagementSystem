@@ -39,13 +39,19 @@ public class UserController {
 				);	
 	}
 	
-	
 	@PostMapping(path = "/save-user", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces= {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<StandardResposeEntity> saveUser(@RequestBody UserDTO dto) {
-		return new ResponseEntity<StandardResposeEntity>(
-				new StandardResposeEntity(200, "Success!",userService.saveUser(dto)),
-				HttpStatus.OK
-				);
+		try {
+			return new ResponseEntity<StandardResposeEntity>(
+					new StandardResposeEntity(200, "Success!",userService.saveUser(dto)),
+					HttpStatus.OK
+					);
+		}catch(Exception e){
+			return new ResponseEntity<StandardResposeEntity>(
+					new StandardResposeEntity(500, "User Already exist","Username Already in use"),
+					HttpStatus.NOT_ACCEPTABLE
+					);
+		}
 		
 	}
 	@PostMapping(path = "/login", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces= {MediaType.APPLICATION_JSON_VALUE})

@@ -12,8 +12,10 @@ import { BookService } from 'src/app/Services/book.service';
 export class UpdateBookComponent implements OnInit {
 
   constructor(private  _router:Router,private router:ActivatedRoute,private bookService:BookService) { }
+  //get the selected book object
   public book:Book =<Book>{};
   
+  //update form group
   updateForm:FormGroup = new FormGroup({
     name: new FormControl(null),
     description: new FormControl(null),
@@ -25,6 +27,7 @@ export class UpdateBookComponent implements OnInit {
   ngOnInit(): void {
     let bookid = parseInt(this.router.snapshot.paramMap.get('id')!);
     
+    //set initial form values
     this.bookService.getBook(bookid).subscribe(res=>{
       this.book=res.data;
         this.updateForm= new FormGroup({
@@ -42,7 +45,7 @@ export class UpdateBookComponent implements OnInit {
   }
 
  
-
+//update function
   update(){
     const b:Book = new Book(
       this.book.id,

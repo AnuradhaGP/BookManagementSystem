@@ -10,6 +10,7 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  // login form group
   loginForm: FormGroup = new FormGroup({
     username: new FormControl(null,[Validators.required]),
     password: new FormControl(null,[Validators.required])
@@ -19,9 +20,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //if there is any error errorState changes to true
   errorState=false;
+  //get the error message
   errorMsg ="";
   
+  //login
   login(){
    this.errorState=false;
    
