@@ -13,6 +13,10 @@
 
 <!-- book details body -->
 <div class="container" >
+
+  <div style="margin: auto;display: flex; justify-content: center;align-items: center;" *ngIf="bookList===[]">
+    <p>No Books Found!</p>
+  </div>
   <!-- card -->
     <div class="cards">
       <div class="card mb-3" id="{{b.id}}" *ngFor="let b of bookList">
@@ -35,7 +39,7 @@
 
                 <div class="card-body">
                     <!-- price  -->
-                    <p id="book-price{{b.id}}" style="color:#3498db; font-weight: bold; font-size: 20px;">${{b.price}}</p>
+                    <p id="book-price{{b.id}}" style="color:#3498db; font-weight: bold; font-size: 20px;">{{b.price|currency:'RS.'}}</p>
                   
                     <!-- button group -->
                     <div style="display: flex; justify-content: flex-end; width:100%;">

@@ -32,6 +32,7 @@
                 <!-- if credentials are incorrect show this error -->
                 <div class="col-4">
                     <p class="error" *ngIf="errorState">{{errorMsg}}</p>
+                    <p class="error" *ngIf="loginForm.invalid && loginForm.touched">Please Enter Username and Password</p>
                   </div>
 
                 <!-- this is not implemented -->
@@ -40,9 +41,9 @@
               </div>
                 <!-- login button -->
                 <div class="col-4" style="display:flex; justify-content: flex-end;">
-                      <button class="btn btn-sm btn-primary" style="width: 100%;" type="submit">Login</button>
+                      <button class="btn btn-sm btn-primary" style="width: 100%;" type="submit" [disabled]="loginForm.invalid">Login</button>
                 </div>
-                
+
                 <!-- to sign in section -->
                 <div class="col-4">
                     <p class="signup">Don't you have an Account? <a routerLink="/signup">Sign up</a></p>
